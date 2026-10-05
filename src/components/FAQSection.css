@@ -1,0 +1,110 @@
+/* ==========================================================================
+   FAQ SECTION STYLES
+   ========================================================================== */
+
+.faq-section {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.faq-accordion-wrap {
+  max-width: 820px;
+  margin: 0 auto 3.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item-card {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.faq-item-card:hover {
+  border-color: var(--color-gold-border);
+}
+
+.faq-item-card.active {
+  border-color: var(--color-gold);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.35rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  transition: color var(--transition-fast);
+}
+
+.faq-item-card.active .faq-question-btn {
+  color: var(--color-gold-dark);
+}
+
+.faq-toggle-icon {
+  color: var(--color-gold-dark);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-answer-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out;
+}
+
+.faq-answer-collapse.open {
+  max-height: 300px;
+}
+
+.faq-answer-inner {
+  padding: 0 1.5rem 1.35rem 1.5rem;
+  border-top: 1px dashed var(--color-border-light);
+  padding-top: 1rem;
+}
+
+.faq-answer-inner p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Still questions card */
+.faq-still-questions {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 2rem;
+}
+
+.still-title {
+  font-size: 1.35rem;
+  color: var(--color-charcoal);
+  margin-bottom: 0.4rem;
+}
+
+.still-desc {
+  font-size: 0.94rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}

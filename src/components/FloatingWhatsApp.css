@@ -1,0 +1,106 @@
+/* ==========================================================================
+   FLOATING WHATSAPP BUTTON (Desktop / Tablet)
+   ========================================================================== */
+
+.floating-whatsapp-wrapper {
+  position: fixed;
+  bottom: 2.25rem;
+  right: 2.25rem;
+  z-index: 990;
+}
+
+.floating-whatsapp-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-whatsapp);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  transition: transform var(--transition-normal), background-color var(--transition-fast);
+  text-decoration: none;
+}
+
+.floating-whatsapp-btn:hover {
+  background-color: var(--color-whatsapp-dark);
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
+}
+
+.floating-wa-icon {
+  position: relative;
+  z-index: 2;
+}
+
+/* Pulsing radar animation */
+.wa-pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background-color: var(--color-whatsapp);
+  opacity: 0.7;
+  z-index: 1;
+  animation: waPulse 2.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes waPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Hover Tooltip */
+.floating-wa-tooltip {
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background-color: var(--color-charcoal-dark);
+  color: #FFFFFF;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(223, 194, 136, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tooltip-sparkle {
+  color: var(--color-gold-light);
+}
+
+.floating-whatsapp-btn:hover .floating-wa-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Hide on mobile devices where fixed bottom contact bar is active */
+@media (max-width: 768px) {
+  .floating-whatsapp-wrapper {
+    display: none;
+  }
+}
